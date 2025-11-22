@@ -24,7 +24,7 @@
                                             <i class="fa-solid fa-money-check fs-1-xl text-white"></i>
                                         </div>
                                         <div class="text-end text-white">
-                                            <h2 class="fs-1-xxl fw-bolder text-white">{{getCurrencySymbol()}} {{ formatCurrency($data['invoiceAmount']) }}</h2>
+                                            <h2 class="fs-1-xxl fw-bolder text-white">{{getCurrencySymbol()}} 25,000</h2>
                                             <h3 class="mb-0 fs-5 fw-light">{{ __('messages.dashboard.total_invoices') }}</h3>
                                         </div>
                                     </div>
@@ -40,7 +40,7 @@
                                             <i class="fa-solid fa-money-bill fs-1-xl text-white"></i>
                                         </div>
                                         <div class="text-end text-white">
-                                            <h2 class="fs-1-xxl fw-bolder text-white">{{getCurrencySymbol()}} {{ formatCurrency($data['billAmount']) }}</h2>
+                                            <h2 class="fs-1-xxl fw-bolder text-white">{{getCurrencySymbol()}} 15,500</h2>
                                             <h3 class="mb-0 fs-5 fw-light">{{ __('messages.dashboard.total_bills') }}</h3>
                                         </div>
                                     </div>
@@ -56,7 +56,7 @@
                                             <i class="fa-solid fa-money-bill fs-1-xl text-white"></i>
                                         </div>
                                         <div class="text-end text-white">
-                                            <h2 class="fs-1-xxl fw-bolder text-white">{{getCurrencySymbol()}} {{ formatCurrency($data['paymentAmount']) }}</h2>
+                                            <h2 class="fs-1-xxl fw-bolder text-white">{{getCurrencySymbol()}} 18,750</h2>
                                             <h3 class="mb-0 fs-5 fw-light">{{ __('messages.dashboard.total_payments') }}</h3>
                                         </div>
                                     </div>
@@ -72,7 +72,7 @@
                                             <i class="fa-solid fa-money-bill fs-1-xl text-white"></i>
                                         </div>
                                         <div class="text-end text-white">
-                                            <h2 class="fs-1-xxl fw-bolder text-white">{{getCurrencySymbol()}} {{ formatCurrency($data['advancePaymentAmount']) }}</h2>
+                                            <h2 class="fs-1-xxl fw-bolder text-white">{{getCurrencySymbol()}} 8,200</h2>
                                             <h3 class="mb-0 fs-5 fw-light">{{ __('messages.dashboard.total_advance_payments') }}</h3>
                                         </div>
                                     </div>
@@ -88,7 +88,7 @@
                                             <i class="fa-solid fa-user fs-1-xl text-white"></i>
                                         </div>
                                         <div class="text-end text-white">
-                                            <h2 class="fs-1-xxl fw-bolder text-white">{{ $data['doctors'] }}</h2>
+                                            <h2 class="fs-1-xxl fw-bolder text-white">24</h2>
                                             <h3 class="mb-0 fs-5 fw-light">{{ __('messages.dashboard.doctors') }}</h3>
                                         </div>
                                     </div>
@@ -104,7 +104,7 @@
                                             <i class="fa-solid fa-user fs-1-xl text-white"></i>
                                         </div>
                                         <div class="text-end text-white">
-                                            <h2 class="fs-1-xxl fw-bolder text-white">{{ $data['patients'] }}</h2>
+                                            <h2 class="fs-1-xxl fw-bolder text-white">156</h2>
                                             <h3 class="mb-0 fs-5 fw-light">{{ __('messages.dashboard.patients') }}</h3>
                                         </div>
                                     </div>
@@ -120,7 +120,7 @@
                                             <i class="fa-solid fa-user-nurse fs-1-xl text-white"></i>
                                         </div>
                                         <div class="text-end text-white">
-                                            <h2 class="fs-1-xxl fw-bolder text-white">{{ $data['nurses'] }}</h2>
+                                            <h2 class="fs-1-xxl fw-bolder text-white">18</h2>
                                             <h3 class="mb-0 fs-5 fw-light">{{ __('messages.nurses') }}</h3>
                                         </div>
                                     </div>
@@ -136,7 +136,7 @@
                                             <i class="fa-solid fa-bed fs-1-xl text-white"></i>
                                         </div>
                                         <div class="text-end text-white">
-                                            <h2 class="fs-1-xxl fw-bolder text-white">{{ $data['availableBeds'] }}</h2>
+                                            <h2 class="fs-1-xxl fw-bolder text-white">45</h2>
                                             <h3 class="mb-0 fs-5 fw-light">{{ __('messages.dashboard.available_beds') }}</h3>
                                         </div>
                                     </div>
@@ -153,7 +153,7 @@
                             </h3>
                         </div>
                         <div class="card-body pt-7">
-                            @if(count($data['enquiries']) > 0)
+                            @if(true) {{-- Static condition for demo --}}
                                 <table class="table table-striped">
                                     <thead>
                                     <tr>
@@ -163,23 +163,40 @@
                                     </tr>
                                     </thead>
                                     <tbody class="text-gray-600 fw-bold">
-                                    @foreach($data['enquiries'] as $enquiry)
-                                        <tr>
-                                            <td>
-                                                <a href="{{ route('enquiry.show' , $enquiry->id) }}"
-                                                   class="text-primary-800 text-decoration-none mb-1 fs-6">{{ $enquiry->full_name }}</a>
-                                            </td>
-                                            <td class="text-start">
-                                                            <span
-                                                                    class="text-muted fw-bold d-block">{{ $enquiry->email }}</span>
-                                            </td>
-                                            <td class="text-center text-muted fw-bold">
-                                                            <span class="badge bg-light-info">
-                                                            {{ \Carbon\Carbon::parse($enquiry->created_at)->translatedFormat('jS M, Y') }}
-                                                            </span>
-                                            </td>
-                                        </tr>
-                                    @endforeach
+                                    {{-- Static Enquiries Data --}}
+                                    <tr>
+                                        <td>
+                                            <a href="#" class="text-primary-800 text-decoration-none mb-1 fs-6">John Doe</a>
+                                        </td>
+                                        <td class="text-start">
+                                            <span class="text-muted fw-bold d-block">john.doe@example.com</span>
+                                        </td>
+                                        <td class="text-center text-muted fw-bold">
+                                            <span class="badge bg-light-info">15th Dec, 2023</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#" class="text-primary-800 text-decoration-none mb-1 fs-6">Jane Smith</a>
+                                        </td>
+                                        <td class="text-start">
+                                            <span class="text-muted fw-bold d-block">jane.smith@example.com</span>
+                                        </td>
+                                        <td class="text-center text-muted fw-bold">
+                                            <span class="badge bg-light-info">14th Dec, 2023</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#" class="text-primary-800 text-decoration-none mb-1 fs-6">Robert Johnson</a>
+                                        </td>
+                                        <td class="text-start">
+                                            <span class="text-muted fw-bold d-block">robert.j@example.com</span>
+                                        </td>
+                                        <td class="text-center text-muted fw-bold">
+                                            <span class="badge bg-light-info">13th Dec, 2023</span>
+                                        </td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             @else
@@ -196,7 +213,7 @@
                             </h3>
                         </div>
                         <div class="card-body pt-7 pb-2">
-                            @if(count($data['noticeBoards']) > 0)
+                            @if(true) {{-- Static condition for demo --}}
                                 <table class="table table-striped">
                                     <thead>
                                     <tr>
@@ -205,19 +222,31 @@
                                     </tr>
                                     </thead>
                                     <tbody class="text-gray-600 fw-bold">
-                                    @foreach($data['noticeBoards'] as $noticeBoard)
-                                        <tr>
-                                            <td>
-                                                <a href="javascript:void(0)" data-id="{{$noticeBoard->id}}"
-                                                   class="text-decoration-none notice-board-view-btn">{{ Str::limit($noticeBoard->title, 32,'...') }}</a>
-                                            </td>
-                                            <td class="text-center">
-                                                        <span class="badge bg-light-info">
-                                                            {{ \Carbon\Carbon::parse($noticeBoard->created_at)->translatedFormat('jS M, Y') }}
-                                                        </span>
-                                            </td>
-                                        </tr>
-                                    @endforeach
+                                    {{-- Static Notice Boards Data --}}
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:void(0)" data-id="1" class="text-decoration-none notice-board-view-btn">Hospital Maintenance Schedule</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge bg-light-info">10th Dec, 2023</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:void(0)" data-id="2" class="text-decoration-none notice-board-view-btn">New COVID-19 Guidelines</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge bg-light-info">8th Dec, 2023</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:void(0)" data-id="3" class="text-decoration-none notice-board-view-btn">Staff Meeting Announcement</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge bg-light-info">5th Dec, 2023</span>
+                                        </td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             @else
@@ -227,36 +256,9 @@
                     </div>
                 </div>
             </div>
-            {{-- Income & Expense Chart--}}
-            {{--            <div class="row">--}}
-            {{--                <div class="col-lg-12">--}}
-            {{--                    <div class="card">--}}
-            {{--                        <div class="card-body">--}}
-            {{--                            <div class="row justify-content-between">--}}
-            {{--                                <div class="col-sm-6 col-md-6 col-lg-6 pt-2">--}}
-            {{--                                    <h5>{{ __('messages.dashboard.income_and_expense_report') }}</h5>--}}
-            {{--                                </div>--}}
-            {{--                                <div class="col-md-3">--}}
-            {{--                                    <div id="time_range" class="time_range d-flex">--}}
-            {{--                                        <i class="far fa-calendar-alt"--}}
-            {{--                                           aria-hidden="true"></i>&nbsp;&nbsp;<span></span>--}}
-            {{--                                        <b class="caret"></b>--}}
-            {{--                                    </div>--}}
-            {{--                                </div>--}}
-            {{--                            </div>--}}
-            {{--                            <div class="table-responsive-sm">--}}
-            {{--                                <div class="pt-2">--}}
-            {{--                                    <canvas id="daily-work-report" class="mh-400px"></canvas>--}}
-            {{--                                </div>--}}
-            {{--                            </div>--}}
-            {{--                        </div>--}}
-            {{--                    </div>--}}
-            {{--                </div>--}}
-            {{--            </div>--}}
 
             {{Form::hidden('incomeExpenseReportUrl',route('income-expense-report'),['id'=>'dashboardIncomeExpenseReportUrl','class'=>'incomeExpenseReportUrl'])}}
             {{Form::hidden('currentCurrencyName',getCurrencySymbol(),['id'=>'dashboardCurrentCurrencyName','class'=>'currentCurrencyName'])}}
-            {{--                        {{Form::hidden('currencies',json_encode($data['currency']),['id'=>'createBillDate','class'=>'currencies'])}}--}}
             {{Form::hidden('income_and_expense_reports',__('messages.dashboard.income_and_expense_reports'),['id'=>'dashboardIncome_and_expense_reports','class'=>'income_and_expense_reports'])}}
             {{Form::hidden('defaultAvatarImageUrl',asset('assets/img/avatar.png'),['id'=>'dashboardDefaultAvatarImageUrl','class'=>'defaultAvatarImageUrl'])}}
             {{Form::hidden('noticeBoardUrl',url('notice-boards'),['id'=>'dashboardNoticeBoardUrl','class'=>'noticeBoardUrl'])}}
@@ -265,5 +267,3 @@
         @include('employees.notice_boards.show_modal')
     </div>
 @endsection
-{{--    <script src="{{mix('assets/js/dashboard/dashboard.js')}}"></script>--}}
-{{--    <script src="{{mix('assets/js/custom/input_price_format.js')}}"></script>--}}
